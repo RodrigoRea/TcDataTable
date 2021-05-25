@@ -1,6 +1,6 @@
 # TcDataTable
 
-Módulo para exibição em tabela com campo de busca e paginação. 
+Módulo responsivo para exibição em tabela com campo de busca e paginação. 
 
 <img src="https://raw.githubusercontent.com/RodrigoRea/TcDataTable/master/src/assets/images/modulo.png">
 
@@ -52,3 +52,42 @@ this.dataTable = [
     }
 ]
 ```
+
+# Propriedades
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IN</td>
+      <td>data</td>
+      <td>Array Object</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>OUT</td>
+      <td>todata</td>
+      <td>Array Object</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>IN</td>
+      <td>itemsForPage</td>
+      <td>Number</td>
+      <td>false (default 10)</td>
+    </tr> 
+    <tr>
+      <td>IN</td>
+      <td>textSearch</td>
+      <td>string</td>
+      <td>false (default `Procurar`)</td>
+    </tr>
+  </tbody>
+</table>

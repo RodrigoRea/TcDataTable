@@ -1,7 +1,8 @@
 <div class="input-group-p">
-    <input #box (keyup)="buscar(box.value)" type="text" class="form-control-p" placeholder="Buscar por usuário ou...">    
+    <input #box (keyup)="buscar(box.value)" type="text" class="form-control-p" placeholder="Buscar por...">    
     <span class="input-group-append-p">
-      <button type="button" class="btn-p btn-default" (click)="box.value = ''; buscar('')" [innerHTML]="textSearch" ></button>      
+      <button type="button" class="btn-p btn-default" *ngIf="box.value === ''" (click)="box.value = ''; buscar('')" [innerHTML]="textSearch" ></button>  
+      <button type="button" class="btn-p btn-default" *ngIf="box.value !== ''" (click)="box.value = ''; buscar('')" ><b>x</b></button>    
     </span>
 </div>
 
