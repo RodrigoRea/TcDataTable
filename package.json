@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "tc-data-table",
-  "version": "0.0.11",
+  "version": "0.0.13",
   "ngPackage": {
     "lib": {
       "entryFile": "public_api.ts"

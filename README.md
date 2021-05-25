@@ -1,8 +1,10 @@
 # TcDataTable
 
-Módulo responsivo para exibição em tabela com campo de busca e paginação. 
+Módulo Angular11. Tabela responsiva com campo de busca e paginação no front-end.
 
 <img src="https://raw.githubusercontent.com/RodrigoRea/TcDataTable/master/src/assets/images/modulo.png">
+
+# Exemplo de uso
 
 # TS
 
