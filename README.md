@@ -2,6 +2,8 @@
 
 Módulo para exibição em tabela com campo de busca e paginação. 
 
+<img src="https://github.com/RodrigoRea/TcDataTable/tree/master/src/assets/images/modulo.png">
+
 # TS
 
 ```
