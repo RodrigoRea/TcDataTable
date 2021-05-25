@@ -1,0 +1,37 @@
+<div class="input-group-p">
+    <input #box (keyup)="buscar(box.value)" type="text" class="form-control-p" placeholder="Buscar por usuário ou...">    
+    <span class="input-group-append-p">
+      <button type="button" class="btn-p btn-default" (click)="box.value = ''; buscar('')" [innerHTML]="textSearch" ></button>      
+    </span>
+</div>
+
+<table #table class="tc-responsive" cellspacing="0">
+    <ng-content></ng-content>
+</table>
+<div class="tc-result"><p>Exibindo {{ exibicaoPorPagina }} itens por página. Total de {{ total }} registros.</p></div>
+
+
+<div class="box-pagination-p">
+    <nav aria-label="Navegação de página exemplo">
+        <ul class="pagination-p">
+            <li class="page-item-p" [class.disabled-p]="paginaAtual == 1 || total == 0">
+                <a class="page-link-p" (click)="setToPagePrev()" [class.disabled-p]="paginaAtual == 1 || total == 0" >Anterior</a>
+            </li>
+            <ng-container *ngFor="let p of arrayPag">
+                <li class="page-item-p" [class.active-p]="paginaAtual === (p+1)">
+                    <a class="page-link-p" (click)="setToPage((p+1))" [class.active-p]="paginaAtual === (p+1)" >{{ (p+1) }}</a>
+                </li>
+            </ng-container>
+            <li class="page-item-p" [class.disabled-p]="paginaAtual == totalDePaginas || total == 0">
+                <a class="page-link-p" (click)="setToPageNext()" [class.disabled-p]="paginaAtual == totalDePaginas || total == 0" >Próximo</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<!-- 
+    <p>Total registros: {{ total }}</p>
+    <p>Exibição por página: {{ exibicaoPorPagina }}</p> 
+    <p>Total de páginas: {{ totalDePaginas }}</p>
+    <p>Página atual: {{ paginaAtual }}</p>
+-->

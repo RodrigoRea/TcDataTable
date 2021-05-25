@@ -1,0 +1,1 @@
+export * from './src/app/_modules/tc-data-table/tc-data-table.module'

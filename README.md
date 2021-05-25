@@ -1,27 +1,52 @@
-# TcTable
+# TcDataTable
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
+Módulo para exibição em tabela com campo de busca e paginação. 
 
-## Development server
+# TS
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+import {TcDataTableModule} from 'tc-data-table';
 
-## Code scaffolding
+@NgModule({
+  imports: [TcDataTableModule],
+})
+export class YourAppModule {
+}
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
 
-## Build
+# HTML
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+<tc-data-table  [data]="dataTable" (todata)="dataTable = $event" [itemsForPage]="10" >
+  <thead>
+    <tr>
+      <th>Produto</th>        
+      <th>ID</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let content of dataTable">
+      <tr>
+        <td>{{ content.product }}</td>
+        <td>{{ content.id }}</td>
+        <td>{{ content.created_at | date: 'dd/MM/yyyy' }}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</tc-data-table>
+```
 
-## Running unit tests
+# TS
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+this.dataTable = [  
+    {
+      "product": "Cadeira",
+      "created_at": "2021-05-07T12:57:02.351838-03:00",
+      "id": "123456",
+      "ref": 11334830,
+    }
+]
+```
